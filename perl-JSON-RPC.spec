@@ -1,9 +1,9 @@
 %define upstream_name    JSON-RPC
-%define upstream_version 0.96
+%define upstream_version 1.03
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 
 Summary:	JSON-RPC sever for mod_perl2
 License:	GPL+ or Artistic
@@ -46,13 +46,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes META.yml README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.960.0-2mdv2011.0
-+ Revision: 657783
-- rebuild for updated spec-helper
-
-* Fri Oct 22 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.960.0-1mdv2011.0
-+ Revision: 587225
-- import perl-JSON-RPC
-
