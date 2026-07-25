@@ -1,15 +1,15 @@
 %define upstream_name    JSON-RPC
-%define upstream_version 0.96
+%define upstream_version 1.06
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	JSON-RPC sever for mod_perl2
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/JSON/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/JSON-RPC
+Source0:	https://cpan.metacpan.org/authors/id/D/DM/DMAKI/JSON-RPC-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
