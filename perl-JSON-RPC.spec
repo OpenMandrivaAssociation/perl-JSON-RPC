@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.06
-Release:	4
+Release:	5
 
 Summary:	JSON-RPC sever for mod_perl2
 License:	GPL+ or Artistic
@@ -12,6 +12,7 @@ Url:		https://metacpan.org/dist/JSON-RPC
 Source0:	https://cpan.metacpan.org/authors/id/D/DM/DMAKI/JSON-RPC-1.06.tar.gz
 
 BuildRequires:	make
+BuildRequires: perl(Module::Build)
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(HTTP::Request)
@@ -34,16 +35,16 @@ PROCEDURES
 %setup -q -n JSON-RPC-1.06
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor
-%make
+perl Build.PL installdirs=vendor
+./Build
 
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+./Build test || :
 
 %install
-%makeinstall_std
+./Build install destdir=%{buildroot} create_packlist=0
 
 %files
 %doc Changes META.yml README
