@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.06
-Release:	9
+Release:	10
 
 Summary:	JSON-RPC sever for mod_perl2
 License:	GPL+ or Artistic
