@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.06
-Release:	48
+Release:	49
 
 Summary:	JSON-RPC sever for mod_perl2
 License:	GPL+ or Artistic
@@ -21,6 +21,7 @@ BuildRequires:	perl(HTTP::Response)
 BuildRequires:	perl(JSON)
 BuildRequires:	perl(LWP::UserAgent)
 BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Plack::Request)
 BuildArch:	noarch
 
 %description
@@ -47,6 +48,8 @@ set +e
 %install
 ./Build install destdir=%{buildroot} create_packlist=0
 
+find %{buildroot} -type f -name '*.pm' -exec chmod -x {} +
+if [ -d %{buildroot}%{_bindir} ]; then find %{buildroot}%{_bindir} -type f -exec chmod 755 {} +; fi
 %files
 %doc Changes META.yml
 %{_mandir}/man3/*
